@@ -16,9 +16,10 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install depedencies
-        # python-setuptools fix ModuleNotFoundError: No module named 'pkg_resources'
+        # python3-setuptools fix ModuleNotFoundError: No module named 'pkg_resources'
         run: |
-          sudo apt-get install -y gnupg2 python-setuptools
+          sudo apt-get update
+          sudo apt-get install -y gnupg2 python3-setuptools
       - name: Setup Python 3.12.2
         uses: actions/setup-python@v5
         with:
@@ -62,4 +63,5 @@ jobs:
       #   uses: coverallsapp/github-action@master
       #   with:
       #     github-token: ${{ secrets.GITHUB_TOKEN }}
-      #     path-to-lcov: coverage.xml
+
+
